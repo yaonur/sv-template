@@ -1,9 +1,10 @@
 <script lang='ts'> 
 import {_} from 'svelte-i18n'
 
+
 </script>
 
-<div class="flex h-24">
+<div class="flex flex-row sm:flex-col   sm:bg-green-300">
 	<div class=" hover:bg-tertiary-50 rounded-b-2xl  h-full relative container-element">
 		<div class=" h-full  flex items-end mx-4 flex-row">
 			<a href="/">{$_('n_industries')}</a>

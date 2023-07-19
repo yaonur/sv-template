@@ -6,7 +6,13 @@ declare global {
 		// interface Locals {}
 		// interface PageData {}
 		// interface Platform {}
+		// declare interface Window {
+		// 	onSubmit: () => void;
+		//   }
 	}
+	// interface Window {
+	// 	innerWidth: number;
+	// }
 }
 
 export {};
