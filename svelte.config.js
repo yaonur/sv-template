@@ -16,7 +16,9 @@ const config = {
 			$stores:'src/lib/stores',
 			$utils:'src/lib/utils',
 			$img:'src/public/assets/img',
-			$logo:'src/public/assets/img/logo',
+			$icon:'src/static/icon',
+			$logo:'src/static/logo',
+			$static:'src/static',
 		}
 		// adapter : adapter({out:'build'})
 	},
