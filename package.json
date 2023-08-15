@@ -28,6 +28,7 @@
     "autoprefixer": "^10.4.15",
     "file-system-cache": "2.0.0",
     "postcss": "^8.4.27",
+    "postcss-variables": "^1.1.1",
     "prettier": "^2.8.8",
     "prettier-plugin-svelte": "^2.10.1",
     "prettier-plugin-tailwindcss": "^0.2.8",
@@ -46,7 +47,10 @@
     "@storybook/addon-svelte-csf": "^3.0.7",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
+    "lucide-svelte": "^0.268.0",
+    "radix-svelte": "^0.9.0",
     "svelte-i18n": "^3.7.0",
-    "tailwind-merge": "^1.14.0"
+    "tailwind-merge": "^1.14.0",
+    "tailwindcss-animate": "^1.0.6"
   }
 }
