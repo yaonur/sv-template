@@ -10,9 +10,4 @@
 
 <svelte:window bind:innerWidth/>
 
-<h1 class="bg-primary text-white">{$screenSize}</h1>
-
-<Home class="w-10 fill-primary"/>
-<div class="bg-primary-800 h-4 sm:bg-blue-500"/>
-<NavRightContainer/>
 

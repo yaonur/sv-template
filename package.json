@@ -44,6 +44,9 @@
   "type": "module",
   "dependencies": {
     "@storybook/addon-svelte-csf": "^3.0.7",
-    "svelte-i18n": "^3.7.0"
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "svelte-i18n": "^3.7.0",
+    "tailwind-merge": "^1.14.0"
   }
 }
