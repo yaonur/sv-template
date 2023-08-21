@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Logo from '$logo/Logo.svg';
-	import '../app.pcss';
+	import '../app.css';
 	import Navbar from '$ui/Navbar/';
 </script>
 
@@ -8,5 +8,5 @@
 	<link rel="icon" type="image/svg" href={Logo} />
 </svelte:head>
 <Navbar  />
-<p class="bg-primary">aaaaa</p>
+<p class="bg-primary flex flex-auto">aaaaa</p>
 <slot />

@@ -23,8 +23,6 @@ const config = {
 		}
 		// adapter : adapter({out:'build'})
 	},
-	shadcn: {
-		componentPath: 'y'
-	}
+
 };
 export default config;

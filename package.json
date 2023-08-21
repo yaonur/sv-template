@@ -47,8 +47,6 @@
     "@storybook/addon-svelte-csf": "^3.0.7",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
-    "lucide-svelte": "^0.268.0",
-    "radix-svelte": "^0.9.0",
     "svelte-i18n": "^3.7.0",
     "tailwind-merge": "^1.14.0",
     "tailwindcss-animate": "^1.0.6"
