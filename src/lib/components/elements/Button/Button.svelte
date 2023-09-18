@@ -1,6 +1,8 @@
 <script lang="ts">
     import type { HTMLButtonAttributes } from "svelte/elements";
     import { cva, type VariantProps } from "class-variance-authority";
+    import {cn} from "$utils/cn"
+    import {createEventDispatcher} from "svelte";
 
     const button = cva("button", {
         variants: {
@@ -17,6 +19,11 @@
             { intent: "primary", size: "medium", class: "primaryMedium" },
         ],
     });
+    const dispatch = createEventDispatcher();
+
+    function handleClick() {
+        dispatch("click");
+    }
 
     interface $$Props extends HTMLButtonAttributes, VariantProps<typeof button> {}
 
@@ -28,7 +35,7 @@
     export let size: $$Props["size"] = "medium";
 </script>
 
-<button {...$$props} class={button({ intent, size, class: $$props.class })}>
+<button {...$$props} class={cn(button({ intent, size, class: $$props.class }))} on:click={handleClick}>
     <slot />
 </button>
 
