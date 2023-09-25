@@ -2,31 +2,39 @@
 
 import type { Handle } from '@sveltejs/kit';
 import { init, register, locale } from 'svelte-i18n';
+import {redirect} from "@sveltejs/kit";
+
+function check_lang(lang:string|undefined){
+	const languages = ['en', 'tr'];
+	if (lang && !languages.includes(lang)) {
+		return undefined
+	}
+	return lang
+}
+
 
 export const handle: Handle = async ({ event, resolve }) => {
-	
-	const lang = event.params.lang
+
+	let lang : string |undefined= event.params.lang
 	console.log("<-----hooks.ts----------->")
 	console.log(event.url.hostname)
 	console.log(lang)
-	
 
-	console.log("layout module")
+
 	register('en', () => import('$lib/i18n/lang/en.json'));
 	register('tr', () => import('$lib/i18n/lang/tr.json'));
 
+	lang=check_lang(lang)
+	if (!lang) {
+		throw redirect(301, '/en');
+	}
+
 	init({
 		fallbackLocale: 'en',
-		initialLocale: 'en'
+		initialLocale: lang
 	});
-	if (lang) {
-		locale.set(lang)
-	} else{
-		console.log("lang is null falling back to en ---------")
-		locale.set('en')
-	}
-	console.log("<-----------hooks.ts----------->")
-     
+	locale.set(lang)
+
 
 
 	const response = await resolve(event);
