@@ -9,17 +9,17 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		alias: {
-			$ui: 'src/lib/components/ui',
-			$elements: 'src/lib/components/elements',
-			$stores: 'src/lib/stores',
-			$utils: 'src/lib/utils',
-			$img: 'src/public/assets/img',
-			$icon: 'src/static/icon',
-			$logo: 'src/static/logo',
-			$static: 'src/static',
-			$lib:'src/lib',
-			$components: 'src/lib/components',
-			'$components/*': 'src/lib/components/*'
+			$ui: './src/lib/components/ui',
+			$elements: './src/lib/components/elements',
+			$stores: './src/lib/stores',
+			$utils: './src/lib/utils',
+			$img: './src/public/assets/img',
+			$icon: './src/static/icon',
+			$logo: './src/static/logo',
+			$static: './src/static',
+			$lib:'./src/lib',
+			$components: './src/lib/components',
+			'$components/*': './src/lib/components/*'
 		}
 		// adapter : adapter({out:'build'})
 	},
