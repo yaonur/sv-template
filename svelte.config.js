@@ -12,7 +12,7 @@ const config = {
 			$ui: './src/lib/components/ui',
 			$elements: './src/lib/components/elements',
 			$stores: './src/lib/stores',
-			$utils: './src/lib/utils',
+			$utils: './src/lib/helpers',
 			$img: './src/public/assets/img',
 			$icon: './src/static/icon',
 			$logo: './src/static/logo',
