@@ -29,5 +29,5 @@
 <svelte:head>
 	<link rel="icon" type="image/svg" href={Logo} />
 </svelte:head>
-<Navbar class="mb-4"/>
+<Navbar  />
 <slot />
