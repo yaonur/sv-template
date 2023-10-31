@@ -3,26 +3,21 @@ import { defineConfig } from 'vite';
 import svg from '@poppanator/sveltekit-svg'
 import path from 'path'
 const svgOptions={
-	includePaths: ['./src/static/icon/'],
+	includePaths: [ 'src/static/icon'],
 	svgoOptions: {
 		multipass: true,
 		plugins: [
-			// {
-			// 	name: 'preset-default',
-			// 	// by default svgo removes the viewBox which prevents svg icons from scaling
-			// 	// not a good idea! https://github.com/svg/svgo/pull/1461
-			// 	// params: { overrides: { removeViewBox: false } },
-			// },
 			{ name: 'removeAttrs', params: { attrs: '(fill|stroke)' } },
 		],
 	},
 }
 //@ts-ignore
-const svgPlugin= svg(svgOptions)
+// const svgPlugin= svg(svgOptions)
 
 // noinspection JSUnusedGlobalSymbols
 export default defineConfig({
-	plugins: [sveltekit(),svgPlugin],
+	//@ts-ignore
+	plugins: [sveltekit(),svg(svgOptions)],
 	resolve: {
 		alias: {
 			$ui: path.resolve(__dirname, 'src/lib/components/ui'),
@@ -35,7 +30,6 @@ export default defineConfig({
 			$logo: path.resolve(__dirname, 'src/static/logo'),
 			$lib: path.resolve(__dirname, 'src/lib'),
 			$components: path.resolve(__dirname, 'src/lib/components'),
-			"$components/*": path.resolve(__dirname, 'src/lib/components/*'),
 		},
 	},
 });

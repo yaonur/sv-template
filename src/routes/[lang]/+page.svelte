@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { _ } from 'svelte-i18n';
+	import TestComp from '$ui/TestCompCn/TestComp.svelte';
+import { _ } from 'svelte-i18n';
 </script>
 
-<div>Init</div>	
+<TestComp/>
