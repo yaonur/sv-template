@@ -20,6 +20,9 @@
             <li>
                 <a href="/{$page.params.lang}/uploadvideo">Upload</a>
             </li>
+            <li>
+                <a href="/{$page.params.lang}/login">Login</a>
+            </li>
         </ul>
     </nav>
     <select bind:value={selectedLanguage} on:change={changeLanguage}>
