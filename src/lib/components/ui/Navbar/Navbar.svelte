@@ -13,12 +13,12 @@
     }
 </script>
 
-<div class="flex justify-between">
+<div class="flex justify-between {$$props.class}">
     <nav>
         <ul class="flex gap-2 bg-gray-300">
             <li><a href="/{$page.params.lang}/">Home</a></li>
             <li>
-                <a href="/{$page.params.lang}/lessons/huntabyte/cleaner_comps">Cleaner Components Hunta</a>
+                <a href="/{$page.params.lang}/uploadvideo">Upload</a>
             </li>
         </ul>
     </nav>
