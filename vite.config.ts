@@ -1,23 +1,24 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
-import svg from '@poppanator/sveltekit-svg'
+// import svg from '@poppanator/sveltekit-svg'
 import path from 'path'
-const svgOptions={
-	includePaths: [ 'src/static/icon'],
-	svgoOptions: {
-		multipass: true,
-		plugins: [
-			{ name: 'removeAttrs', params: { attrs: '(fill|stroke)' } },
-		],
-	},
-}
+// const svgOptions={
+// 	includePaths: [ 'src/static/icon'],
+// 	svgoOptions: {
+// 		multipass: true,
+// 		plugins: [
+// 			{ name: 'removeAttrs', params: { attrs: '(fill|stroke)' } },
+// 		],
+// 	},
+// }
 //@ts-ignore
 // const svgPlugin= svg(svgOptions)
 
 // noinspection JSUnusedGlobalSymbols
 export default defineConfig({
 	//@ts-ignore
-	plugins: [sveltekit(),svg(svgOptions)],
+	// plugins: [sveltekit(),svg(svgOptions)],
+	plugins: [sveltekit()],
 	resolve: {
 		alias: {
 			$ui: path.resolve(__dirname, 'src/lib/components/ui'),
