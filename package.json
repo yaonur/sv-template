@@ -25,6 +25,7 @@
     "@sveltejs/adapter-auto": "^2.1.0",
     "@sveltejs/adapter-node": "1.0.0",
     "@sveltejs/kit": "^1.27.2",
+    "@unocss/transformer-variant-group": "^0.57.2",
     "autoprefixer": "^10.4.16",
     "file-system-cache": "2.0.0",
     "postcss": "^8.4.31",
@@ -40,11 +41,13 @@
     "tailwindcss": "^3.3.5",
     "tslib": "^2.6.2",
     "typescript": "^5.2.2",
+    "unocss": "^0.57.2",
     "vite": "^4.5.0"
   },
   "type": "module",
   "dependencies": {
     "@storybook/addon-svelte-csf": "^3.0.10",
+    "@unocss/reset": "^0.57.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "svelte-i18n": "^3.7.4",

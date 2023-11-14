@@ -20,8 +20,9 @@ const config = {
 			$lib:'./src/lib',
 			$components: './src/lib/components',
 			'$components/*': './src/lib/components/*'
-		}
+		},
 		// adapter : adapter({out:'build'})
+		
 	},
 
 };

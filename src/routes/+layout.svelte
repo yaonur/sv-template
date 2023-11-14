@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Logo from '$logo/Logo.svg';
-	import '../app.css';
+	import 'uno.css'
+	import '@unocss/reset/tailwind.css'
 	import Navbar from '$ui/Navbar/';
 	import {page} from "$app/stores";
 	import {_} from 'svelte-i18n'
@@ -29,5 +30,7 @@
 <svelte:head>
 	<link rel="icon" type="image/svg" href={Logo} />
 </svelte:head>
-<Navbar  />
-<slot />
+<div class="bg-gray-200 h-screen">
+	<Navbar  />
+	<slot />
+</div>

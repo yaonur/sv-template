@@ -1,5 +1,6 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
+import UnoCSS from 'unocss/vite'
 import svg from '@poppanator/sveltekit-svg'
 import path from 'path'
 const svgOptions={
@@ -17,7 +18,7 @@ const svgOptions={
 // noinspection JSUnusedGlobalSymbols
 export default defineConfig({
 	//@ts-ignore
-	plugins: [sveltekit(),svg(svgOptions)],
+	plugins: [UnoCSS(),sveltekit(),svg(svgOptions)],
 	resolve: {
 		alias: {
 			$ui: path.resolve(__dirname, 'src/lib/components/ui'),
