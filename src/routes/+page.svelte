@@ -12,6 +12,4 @@
 
 <div>
 	<p class=" px-1 py-1">Uploader</p>
-
-	<Uploader />
 </div>
