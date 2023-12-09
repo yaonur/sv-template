@@ -5,9 +5,6 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  '@inlang/cli':
-    specifier: ^2.1.0
-    version: 2.1.0
   '@storybook/addon-svelte-csf':
     specifier: ^4.0.13
     version: 4.0.13(@storybook/svelte@7.6.4)(@storybook/theming@7.6.4)(@sveltejs/vite-plugin-svelte@2.5.3)(svelte@4.2.8)(vite@5.0.7)
@@ -28,6 +25,9 @@ dependencies:
     version: 1.0.7(tailwindcss@3.3.6)
 
 devDependencies:
+  '@inlang/cli':
+    specifier: ^2.1.0
+    version: 2.1.0
   '@inlang/paraglide-js':
     specifier: 1.0.0-prerelease.17
     version: 1.0.0-prerelease.17
@@ -1838,7 +1838,7 @@ packages:
     dependencies:
       esbuild-wasm: 0.19.8
       fs-extra: 11.1.1
-    dev: false
+    dev: true
 
   /@inlang/detect-json-formatting@1.0.0:
     resolution: {integrity: sha512-o0jeI8U4TgNlsPwI0y92jld8/18Loh2KEgHCYCJ42rCOdxFrA8R60cydlEd2/6jkdHFn5DxKj8rOyiKv3z9uOw==}
@@ -5100,7 +5100,7 @@ packages:
     resolution: {integrity: sha512-+5BhFGjW0+3cC5BEcujYfNaslSEBjF+zFHj4a7xff2LLByCJGok3iCyV9/oHpN8OlZrGlnjSduhY1t1QqU1YBQ==}
     engines: {node: '>=12'}
     hasBin: true
-    dev: false
+    dev: true
 
   /esbuild@0.18.20:
     resolution: {integrity: sha512-ceqxoedUrcayh7Y7ZX6NdbbDzGROiyVBgC4PriJThBKSVPWnnFHZAkfI1lJT8QFkOwH4qOS2SJkS4wvpGl8BpA==}

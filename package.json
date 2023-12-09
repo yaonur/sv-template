@@ -44,11 +44,11 @@
     "tailwindcss": "^3.3.6",
     "tslib": "^2.6.2",
     "typescript": "^5.3.3",
-    "vite": "^5.0.7"
+    "vite": "^5.0.7",
+    "@inlang/cli": "^2.1.0"
   },
   "type": "module",
   "dependencies": {
-    "@inlang/cli": "^2.1.0",
     "@storybook/addon-svelte-csf": "^4.0.13",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
