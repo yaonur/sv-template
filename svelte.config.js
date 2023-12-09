@@ -17,12 +17,12 @@ const config = {
 			$icon: './src/static/icon',
 			$logo: './src/static/logo',
 			$static: './src/static',
-			$lib:'./src/lib',
+			$lib: './src/lib',
 			$components: './src/lib/components',
-			'$components/*': './src/lib/components/*'
+			'$components/*': './src/lib/components/*',
+			$paraglide: './src/paraglide'
 		}
 		// adapter : adapter({out:'build'})
-	},
-
+	}
 };
 export default config;

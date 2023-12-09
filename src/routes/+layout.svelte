@@ -1,33 +1,28 @@
 <script lang="ts">
-	import Logo from '$logo/Logo.svg';
-	import '../app.css';
-	import Navbar from '$ui/Navbar/';
-	import {page} from "$app/stores";
-	import {_} from 'svelte-i18n'
-	import { init, register,locale} from 'svelte-i18n'
-	import {afterUpdate} from "svelte";
-	import type { ComponentType, SvelteComponent } from 'svelte'
-	import type { SVGAttributes } from 'svelte/elements'
+	import { goto } from '$app/navigation';
+	import { page } from '$app/stores';
+	import { browser } from '$app/environment';
+	import { setLanguageTag, sourceLanguageTag, type AvailableLanguageTag } from '$paraglide/runtime';
+	import { availableLanguageTags } from '$paraglide/runtime';
+	import { route } from '$lib/i18n-routing';
 
-  
-	type SvgComponent= ComponentType<SvelteComponent<SVGAttributes<SVGSVGElement>>>
-	const defaultLocale = 'en'
+	$: lang = ($page.params.lang as AvailableLanguageTag) ?? sourceLanguageTag;
 
-	register('en', () => import('$lib/i18n/lang/en.json'))
-	register('tr', () => import('$lib/i18n/lang/tr.json'))
-
-	init({
-		fallbackLocale: defaultLocale,
-		initialLocale: $page.params.lang || defaultLocale,
-	})
-	locale.set($page.params.lang || defaultLocale)
-	afterUpdate(()=>{
-		locale.set($page.params.lang || defaultLocale)
-	})
+	$: setLanguageTag(lang);
+	$: pathName = $page.url.pathname;
+	console.log('pathName layout', $page.url.pathname);
+	if (browser && ($page.url.pathname == '/' || !availableLanguageTags.includes(lang))) {
+		// console.log("path name wrong");
+		goto(`/en`);
+	}
 </script>
 
-<svelte:head>
-	<link rel="icon" type="image/svg" href={Logo} />
-</svelte:head>
-<Navbar  />
-<slot />
+{#each availableLanguageTags as lang, i}
+	<a href={route($page.url.pathname, lang)} hreflang={lang}>Change language to {lang}</a>
+{/each}
+<div>
+	<a href={$page.params.lang + '/signup'}>Signup</a>
+</div>
+{#key lang}
+	<slot />
+{/key}
