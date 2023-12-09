@@ -6,6 +6,5 @@
 </script>
 
 
-<p>Testint lang</p>
 <p>{m._test()}</p>
 

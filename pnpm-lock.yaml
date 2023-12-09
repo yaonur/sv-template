@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@inlang/cli':
+    specifier: ^2.1.0
+    version: 2.1.0
   '@storybook/addon-svelte-csf':
     specifier: ^4.0.13
     version: 4.0.13(@storybook/svelte@7.6.4)(@storybook/theming@7.6.4)(@sveltejs/vite-plugin-svelte@2.5.3)(svelte@4.2.8)(vite@5.0.7)
@@ -1827,6 +1830,15 @@ packages:
 
   /@humanwhocodes/object-schema@1.2.1:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
+
+  /@inlang/cli@2.1.0:
+    resolution: {integrity: sha512-Bvjd1+Uc30djVUPfCzWYMPleoz+wnEn/5lWR9nbTQW3vyHjiLcRZeeSnc+L6PZP55B2t4hWYSZUCe2taJsWJdA==}
+    engines: {node: '>=18.0.0'}
+    hasBin: true
+    dependencies:
+      esbuild-wasm: 0.19.8
+      fs-extra: 11.1.1
+    dev: false
 
   /@inlang/detect-json-formatting@1.0.0:
     resolution: {integrity: sha512-o0jeI8U4TgNlsPwI0y92jld8/18Loh2KEgHCYCJ42rCOdxFrA8R60cydlEd2/6jkdHFn5DxKj8rOyiKv3z9uOw==}
@@ -5083,6 +5095,12 @@ packages:
       esbuild: 0.18.20
     transitivePeerDependencies:
       - supports-color
+
+  /esbuild-wasm@0.19.8:
+    resolution: {integrity: sha512-+5BhFGjW0+3cC5BEcujYfNaslSEBjF+zFHj4a7xff2LLByCJGok3iCyV9/oHpN8OlZrGlnjSduhY1t1QqU1YBQ==}
+    engines: {node: '>=12'}
+    hasBin: true
+    dev: false
 
   /esbuild@0.18.20:
     resolution: {integrity: sha512-ceqxoedUrcayh7Y7ZX6NdbbDzGROiyVBgC4PriJThBKSVPWnnFHZAkfI1lJT8QFkOwH4qOS2SJkS4wvpGl8BpA==}

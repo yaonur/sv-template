@@ -48,6 +48,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@inlang/cli": "^2.1.0",
     "@storybook/addon-svelte-csf": "^4.0.13",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
