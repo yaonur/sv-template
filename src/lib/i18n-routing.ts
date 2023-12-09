@@ -11,11 +11,11 @@ import {
 export function route(path: string, lang: AvailableLanguageTag) {
 	console.log("<<<<<<<<route function>>>>>")
 	const pathProcessed = withoutLanguageTag(path,lang)
-	if(lang === "en") {
-		console.log("path before withoutLanguageTag:", path)
-		console.log("path after:", pathProcessed)
-		console.log("lang is:",lang)
-	}
+	// if(lang === "en") {
+	// 	console.log("path before withoutLanguageTag:", path)
+	// 	console.log("path after:", pathProcessed)
+	// 	console.log("lang is:",lang)
+	// }
 
 	// Don't prefix the default language
 	// if (lang === sourceLanguageTag) {
@@ -37,14 +37,14 @@ export function route(path: string, lang: AvailableLanguageTag) {
  */
 function withoutLanguageTag(path: string,lang: string) {
 	const [_, maybeLang, ...rest] = path.split("/")
-	if(lang==="en"){
-		console.log("<<<<<<<-------withoutLanguageTag function>>>>>")
-		console.log("path:", path)
-		console.log("availableLanguageTags:", availableLanguageTags)
-		console.log("rest", rest)
-		console.log("maybeLang", maybeLang)
-		console.log("<<<<<<<<<<<<<<<<<<<<<<< withoutLanguageTag function")
-	}
+	// if(lang==="en"){
+	// 	console.log("<<<<<<<-------withoutLanguageTag function>>>>>")
+	// 	console.log("path:", path)
+	// 	console.log("availableLanguageTags:", availableLanguageTags)
+	// 	console.log("rest", rest)
+	// 	console.log("maybeLang", maybeLang)
+	// 	console.log("<<<<<<<<<<<<<<<<<<<<<<< withoutLanguageTag function")
+	// }
 	if (availableLanguageTags.includes(maybeLang as AvailableLanguageTag)) {
 		return rest.join("/")
 	}

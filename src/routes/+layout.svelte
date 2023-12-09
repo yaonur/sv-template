@@ -18,8 +18,6 @@
   </script>
 
 {#each availableLanguageTags as lang,i}
-	<p>{$page.url.pathname}</p>
-	<p>{lang}</p>
 	<a href={route($page.url.pathname, lang)} hreflang={lang}>Change language to {lang}</a>
 {/each}
 <div>
