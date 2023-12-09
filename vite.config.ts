@@ -1,7 +1,8 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
-// import svg from '@poppanator/sveltekit-svg'
+import { paraglide } from "@inlang/paraglide-js-adapter-vite"
 import path from 'path'
+// import svg from '@poppanator/sveltekit-svg'
 // const svgOptions={
 // 	includePaths: [ 'src/static/icon'],
 // 	svgoOptions: {
@@ -18,7 +19,11 @@ import path from 'path'
 export default defineConfig({
 	//@ts-ignore
 	// plugins: [sveltekit(),svg(svgOptions)],
-	plugins: [sveltekit()],
+	plugins: [sveltekit(),
+		paraglide({
+			project: "./project.inlang",
+			outdir: "./src/paraglide",
+		}),],
 	resolve: {
 		alias: {
 			$ui: path.resolve(__dirname, 'src/lib/components/ui'),
@@ -34,3 +39,5 @@ export default defineConfig({
 		},
 	},
 });
+
+
