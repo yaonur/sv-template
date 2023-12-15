@@ -6,7 +6,7 @@ import { redirect } from '@sveltejs/kit';
 function check_lang(lang: string | undefined) {
 	const languages = ['en', 'tr'];
 	if (lang && !languages.includes(lang)) {
-		throw redirect(301, '/en');
+		redirect(301, '/en');
 	}
 	return lang;
 }
