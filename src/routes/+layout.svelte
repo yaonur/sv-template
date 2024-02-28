@@ -17,7 +17,7 @@
 	}
 </script>
 
-{#each availableLanguageTags as lang, i}
+<!-- {#each availableLanguageTags as lang, i}
 	<a href={route($page.url.pathname, lang)} hreflang={lang}>Change language to {lang}</a>
 {/each}
 <div class="flex gap-4">
@@ -27,4 +27,6 @@
 </div>
 {#key lang}
 	<slot />
-{/key}
+{/key} -->
+<slot></slot>
+
