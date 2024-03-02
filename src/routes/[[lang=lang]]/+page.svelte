@@ -19,7 +19,7 @@
 		}
 	];
 </script>
-<p>Context api example with stores for comp lib </p>
+<!-- <p>Context api example with stores for comp lib </p>
 <Accordion >
 	{#each items as item, i}
 		<AccordionItem>
@@ -27,4 +27,4 @@
 			<svelte:fragment slot="content"> {item.content}</svelte:fragment>
 		</AccordionItem>
 	{/each}
-</Accordion>
+</Accordion> -->

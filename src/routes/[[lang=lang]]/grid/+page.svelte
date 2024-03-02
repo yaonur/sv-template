@@ -1,4 +1,5 @@
 <script lang="ts">
+	
 	export const gridData = [
 		{
 			title: 'Subscriber',
@@ -30,6 +31,7 @@
 		}
 	];
 	
+
 </script>
 
 <div class="mx-auto max-w-7xl">
