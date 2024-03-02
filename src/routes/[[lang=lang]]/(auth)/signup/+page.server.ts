@@ -1,15 +1,10 @@
 import { superValidate } from 'sveltekit-superforms';
-import { z } from 'zod';
 import type { PageServerLoad, Actions } from './$types';
 import { zod } from 'sveltekit-superforms/adapters';
 import { fail, redirect } from '@sveltejs/kit';
-import { schema } from './schema';
+import {schema} from './schema'
+import { route } from '$lib/i18n-routing.js';
 
-// Define outside the load function so the adapter can be cached
-// const schema = z.object({
-//   password: z.string(),
-//   email: z.string().email()
-// });
 
 export const load = (async () => {
 	const form = await superValidate(zod(schema));
@@ -20,31 +15,36 @@ export const load = (async () => {
 
 export const actions = {
 	default: async (event) => {
+		console.log('default action');
+		console.log("making a delay")
+		console.log("request:",event.request)
+		await new Promise(resolve => setTimeout(resolve, 1000));
 		const form = await superValidate(event.request, zod(schema));
-		console.log("form in signin",form)
-
 		if (!form.valid) {
-			console.log('form not valid');
 			// Again, return { form } and things will just work.
+			console.log("form is not valid")
+			console.log("form data:",form.data)
+			console.log("form errors:",form.errors)
 			return fail(400, { form });
 		}
-		// console.log("form signin",form.data)
-		const { data, error } = await event.locals.supabase.auth.signInWithPassword({
+		console.log("form is valid data:",form.data)
+		let { data, error } = await event.locals.supabase.auth.signUp({
 			email: form.data.email,
 			password: form.data.password
-		});
-		if (error) {
-			console.log('error from signin:', error);
-			return fail(400, { form });
+		  })
+		if(error){
+			console.log("error from signup:",error)
+			return {form}
 		}
-		console.log("data from signin",data.session)
-		// console.log('res from signin:', data);
-		  throw redirect(302,"/");
-		//   console.log("success returning form",form)
+		console.log("data from signup:",data)
+
 
 		// TODO: Do something with the validated form.data
 
 		// Yep, return { form } here too
-		return { form };
+		throw redirect(302,"/en/signin");
+		// throw redirect(302,route('/signin',  'en' ));
+
+		return {form}
 	}
 };

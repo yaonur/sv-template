@@ -1,5 +1,7 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"_test": "Dil Testi",
-	"_signUp": "Üye ol"
+	"_signUp": "Üye ol",
+	"_signIn": "Giriş yap",
+	"_grid": "Izgara"
 }

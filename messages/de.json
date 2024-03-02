@@ -1,5 +1,7 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 	"_test": "Sprache testen",
-	"_signUp": "s'inscrire"
+	"_signUp": "s'inscrire",
+	"_signIn": "Se connecter",
+	"_grid": "Grille"
 }
