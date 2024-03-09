@@ -2,7 +2,16 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"name": "sv-template/db",
+			"path": "./db"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"deno.enable": true,
+		"deno.lint": true,
+		"deno.unstable": false,
+		"deno.enablePaths": ["./db/supabase/functions"]
+	}
 }
