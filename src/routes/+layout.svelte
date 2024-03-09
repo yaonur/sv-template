@@ -47,6 +47,7 @@
 		<a href={route('grid', lang)}>{m._grid()}</a>
 		<a href={route('profile', lang)}>Profile</a>
 		<a href={route('', lang)}>Home</a>
+		<a href={route('playground', lang)}>PlayGround</a>
 	</div>
 {/key}
 {#key lang}

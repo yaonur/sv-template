@@ -2,7 +2,7 @@
 
 import type { Handle } from '@sveltejs/kit';
 import { redirect } from '@sveltejs/kit';
-import { PUBLIC_SUPABASE_URL_LOCAL, PUBLIC_SUPABASE_ANON_KEY_LOCAL } from '$env/static/public';
+import { PUBLIC_SUPABASE_URL_LOCAL, PUBLIC_SUPABASE_ANON_KEY_LOCAL,PUBLIC_SUPABASE_URL,PUBLIC_SUPABASE_ANON_KEY,PUBLIC_MODE } from '$env/static/public';
 import { createSupabaseServerClient } from '@supabase/auth-helpers-sveltekit';
 
 function check_lang(lang: string | undefined) {
@@ -18,8 +18,8 @@ export const handle: Handle = async ({ event, resolve }) => {
 	let lang: string | undefined = event.params.lang;
 	
 	event.locals.supabase = createSupabaseServerClient({
-		supabaseUrl: PUBLIC_SUPABASE_URL_LOCAL,
-		supabaseKey: PUBLIC_SUPABASE_ANON_KEY_LOCAL,
+		supabaseUrl: PUBLIC_MODE === "beta" ? PUBLIC_SUPABASE_URL : PUBLIC_SUPABASE_URL_LOCAL,
+		supabaseKey: PUBLIC_MODE === "beta" ? PUBLIC_SUPABASE_ANON_KEY : PUBLIC_SUPABASE_ANON_KEY_LOCAL,
 		event
 	});
 
