@@ -8,10 +8,8 @@
 	let name = ''
 	async function handleHello() {
 		const { data, error } = await supabase.functions.invoke('hello', {
-			headers: {
-				'my-custom-header': 'my-custom-header-value'
-			},
-			body: { foo: 'bar' }
+			
+			body: { name: 'onur' }
 		});
 		if (error) {
 			console.log('error:', error);

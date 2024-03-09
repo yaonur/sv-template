@@ -2,6 +2,7 @@
 	"extends": "./.svelte-kit/tsconfig.json",
 	"exclude": [
 		"node_modules",
+		"./db/supabase/**/*"
 	  ],
 	"compilerOptions": {
 		"allowJs": true,
