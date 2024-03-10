@@ -2,15 +2,18 @@
 	"folders": [
 		{
 			"name": "sv-template/db/supabase/functions",
-			"path": "./db/supabase/functions",
+			"path": "./db/supabase/functions"
 		},
 		{
 			"name": "sv-src",
-			"path": "./src",
+			"path": "./src"
 		},
 		{
 			"path": "."
 		},
+		{
+			"path": "../../lessons/cheat-sheets"
+		}
 	],
 	"settings": {
 		"files.exclude": {

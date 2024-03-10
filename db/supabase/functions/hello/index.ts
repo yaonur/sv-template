@@ -8,7 +8,6 @@ Deno.serve(async (req) => {
     console.log("request:",req)
     const requestOrigin = req.headers.get("Origin");
     console.log("requestOrigin:",requestOrigin)
-
     // Generate CORS headers for the current request's origin
     const corsHeaders = generateCorsHeaders(requestOrigin!);
     console.log("generated corsHeaders:", corsHeaders);
