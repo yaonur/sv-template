@@ -28,7 +28,7 @@
 			console.error('No file selected');
 			return;
 		}
-		const { data, error } = await supabase.storage.from('images').upload(`avatar-${Date.now()}.png`, file, {
+		const { data, error } = await supabase.storage.from('images').upload(`${session?.user?.email}/avatar-${Date.now()}.png`, file, {
 			cacheControl: '3600',
 			contentType: 'image/png',
 			upsert: true
