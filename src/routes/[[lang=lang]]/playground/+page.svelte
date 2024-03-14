@@ -28,9 +28,9 @@
 			console.error('No file selected');
 			return;
 		}
-		const { data, error } = await supabase.storage.from('profiles').upload(`${session?.user?.email}/avatar-${Date.now()}.png`, file, {
+		const { data, error } = await supabase.storage.from('profiles').upload(`${session?.user?.email}/avatar-${Date.now()}.${file?.type.split('/')[1]}`, file, {
 			cacheControl: '3600',
-			contentType: 'image/png',
+			contentType: 'image/*',
 			upsert: true
 		});
 		if (error) {
@@ -47,6 +47,7 @@
 			return;
 		}
 		file = input.files[0];
+		console.log(file)
 	}
 </script>
 
