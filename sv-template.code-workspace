@@ -5,10 +5,6 @@
 			"path": "./db/supabase/functions"
 		},
 		{
-			"name": "sv-src",
-			"path": "./src"
-		},
-		{
 			"path": "."
 		},
 		{
