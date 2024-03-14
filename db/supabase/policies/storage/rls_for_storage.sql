@@ -11,7 +11,7 @@ create policy "Allow authenticated uploads to root"
 on storage.objects 
 for insert 
 to authenticated 
-using ( 
+with check ( 
   bucket_id = 'profiles' and 
   (storage.foldername(name))[1] = auth.email()
 );
