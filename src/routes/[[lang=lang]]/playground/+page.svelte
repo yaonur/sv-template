@@ -21,6 +21,18 @@
 		message = data.message;
 		name = data.name;
 	}
+	async function handleCalculation() {
+		const { data, error } = await supabase.functions.invoke('calculation', {
+			body: { id: 1 }
+		});
+		if (error) {
+			console.log('error:', error);
+			message = `Error ${error.message}`;
+		}
+		console.log('data:', data);
+		message = data.message;
+		name = data.name;
+	}
 
 	async function handleUploadImage() {
 		console.log("uploading image")
@@ -52,12 +64,13 @@
 </script>
 
 <div class="grid grid-cols-12 gap-4">
-	<div class="border-2 border-black p-4 col-span-2">
+	<div class="border-2 border-black p-4 col-span-3 flex flex-col gap-1">
 		<p>message: {message}</p>
 		<p>name: {name}</p>
 		<Button on:click={handleHello}>Call Hello</Button>
+		<Button on:click={handleCalculation}>Call Calculation</Button>
 	</div>
-	<div class="border-2 col-span-4 border-black p-4">
+	<div class="border-2 col-span-4 border-black p-5 flex flex-col gap-1">
 		<input type="file" accept="image/png" on:change={handleFileChange}>
 		{#if file}
 			<img src={URL.createObjectURL(file)} alt="Preview" class="max-w-full h-auto">

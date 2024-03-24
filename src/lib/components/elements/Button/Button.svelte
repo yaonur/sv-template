@@ -35,7 +35,7 @@
     export let size: $$Props["size"] = "medium";
 </script>
 
-<button {...$$props} class={cn(button({ intent, size, class: $$props.class }))} on:click={handleClick}>
+<button {...$$props} class={cn(button({ intent, size, class: $$props.class}),"rounded-lg px-2")} on:click={handleClick}>
     <slot />
 </button>
 

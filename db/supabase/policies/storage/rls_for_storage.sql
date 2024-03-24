@@ -1,4 +1,4 @@
--- Active: 1709721151451@@127.0.0.1@5432@postgres
+-- Active: 1709591217055@@127.0.0.1@5432@postgres
 create policy "Allow select for authenticated" 
 on storage.objects 
 for select 
