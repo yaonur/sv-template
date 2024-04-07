@@ -1,6 +1,6 @@
 import { corsHeaders } from '../_shared/cors.ts'
 
-import { Hono } from 'https://deno.land/x/hono/mod.ts'
+import { Hono } from 'Hono'
 import { cors } from 'https://deno.land/x/hono/middleware.ts'
 import type { Context } from 'https://deno.land/x/hono/mod.ts'
 import { jwt } from 'https://deno.land/x/hono/middleware.ts'
