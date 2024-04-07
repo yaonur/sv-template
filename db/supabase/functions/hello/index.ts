@@ -5,12 +5,12 @@ import { generateCorsHeaders } from '../_shared/cors.ts';
 
 Deno.serve(async (req) => {
     // Extract the Origin header from the incoming request
-    console.log("request:",req)
+    // console.log("request:",req)
     const requestOrigin = req.headers.get("Origin");
-    console.log("requestOrigin:",requestOrigin)
+    // console.log("requestOrigin:",requestOrigin)
     // Generate CORS headers for the current request's origin
     const corsHeaders = generateCorsHeaders(requestOrigin!);
-    console.log("generated corsHeaders:", corsHeaders);
+    // console.log("generated corsHeaders:", corsHeaders);
 
     // Handle preflight (OPTIONS) requests
     if (req.method === 'OPTIONS') {

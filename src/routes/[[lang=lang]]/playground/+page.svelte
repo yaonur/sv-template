@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { dictionary } from './../../../../.svelte-kit/generated/client/app.js';
 	import Button from '$elements/Button';
 	import type { PageData } from './$types';
 
@@ -64,6 +65,16 @@
 		file = input.files[0];
 		console.log(file)
 	}
+	let honoResp:any
+	async function handleHono(){
+		console.log("hono")
+		const {data,error} = await supabase.functions.invoke('hono',{body:{name:"onur"}})
+		if(error){
+			console.log("error:",error)
+		}
+		console.log("data:",data)
+		honoResp = data
+	}
 </script>
 
 <div class="grid grid-cols-12 gap-4 mx-auto">
@@ -86,4 +97,15 @@
 		{/if}
 		<Button on:click={handleUploadImage}>Upload Image</Button>
 	</div>
+	<div class="border-2 w-full border-black p-4 col-span-3 flex flex-col gap-1">
+		<div class="">
+			<p>message: {honoResp?.message}</p>
+			<p>isAuth: {honoResp?.authenticated}</p>
+			{#if honoResp?.authenticated}
+				<p>userMail: {honoResp?.userMail}</p>
+			{/if}
+			<Button class="w-full" on:click={handleHono}>Call Hono</Button>
+		</div>
+	</div>
+
 </div>
