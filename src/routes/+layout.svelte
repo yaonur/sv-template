@@ -26,7 +26,8 @@
 		{/each}
 	</div>
 	<div>
-		<a href={$page.params.lang + '/signup'}>{m._signUp()}</a>
+		<a href={route('signup', $page.params.lang as AvailableLanguageTag)}>{m._signUp()}</a>
+		<a href={route('about', $page.params.lang as AvailableLanguageTag)}>{m._about()}</a>
 	</div>
 	<slot />
 {/key}
