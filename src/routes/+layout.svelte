@@ -5,6 +5,7 @@
 	import { setLanguageTag, sourceLanguageTag, type AvailableLanguageTag } from '$paraglide/runtime';
 	import { availableLanguageTags } from '$paraglide/runtime';
 	import { route } from '$lib/i18n-routing';
+	import * as m from '$paraglide/messages';
 
 	$: lang = ($page.params.lang as AvailableLanguageTag) ?? sourceLanguageTag;
 
@@ -21,7 +22,7 @@
 	<a href={route($page.url.pathname, lang)} hreflang={lang}>Change language to {lang}</a>
 {/each}
 <div>
-	<a href={$page.params.lang + '/signup'}>Signup</a>
+	<a href={$page.params.lang + '/signup'}>{m._signUp()}</a>
 </div>
 {#key lang}
 	<slot />
