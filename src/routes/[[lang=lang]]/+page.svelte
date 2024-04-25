@@ -19,7 +19,7 @@
 		}
 	];
 </script>
-<p>Context api example with stores for comp lib </p>
+<p class="text-red-400 my-4">Context api example with stores for comp lib </p>
 <Accordion >
 	{#each items as item, i}
 		<AccordionItem>
