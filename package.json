@@ -17,8 +17,9 @@
   },
   "devDependencies": {
     "@inlang/cli": "^2.15.2",
-    "@inlang/paraglide-js": "^1.7.2",
+    "@inlang/paraglide-js": "1.7.2",
     "@inlang/paraglide-js-adapter-vite": "^1.2.40",
+    "@inlang/paraglide-sveltekit": "^0.6.12",
     "@poppanator/sveltekit-svg": "^4.2.1",
     "@storybook/addon-essentials": "^7.6.18",
     "@storybook/addon-interactions": "^7.6.18",
