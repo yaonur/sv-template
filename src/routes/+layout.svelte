@@ -1,4 +1,5 @@
 <script lang="ts">
+	import '../app.css';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { browser } from '$app/environment';
@@ -18,15 +19,14 @@
 	}
 </script>
 
-<div class="flex gap-8">
-	{#each availableLanguageTags as lang, i}
-	<a href={route($page.url.pathname, lang)} hreflang={lang}>Change language to {lang}</a>
-	{/each}
-</div>
-<div>
-	<p class="text-red-500">{m._signUp()}</p>
-	<a href={$page.params.lang + '/signup'}>{m._signUp()}</a>
-</div>
 {#key lang}
+	<div class="flex gap-8">
+		{#each availableLanguageTags as lang, i}
+			<a href={route($page.url.pathname, lang)} hreflang={lang}>Change language to {lang}</a>
+		{/each}
+	</div>
+	<div>
+		<a href={$page.params.lang + '/signup'}>{m._signUp()}</a>
+	</div>
 	<slot />
 {/key}
