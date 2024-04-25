@@ -18,10 +18,13 @@
 	}
 </script>
 
-{#each availableLanguageTags as lang, i}
+<div class="flex gap-8">
+	{#each availableLanguageTags as lang, i}
 	<a href={route($page.url.pathname, lang)} hreflang={lang}>Change language to {lang}</a>
-{/each}
+	{/each}
+</div>
 <div>
+	<p class="text-red-500">{m._signUp()}</p>
 	<a href={$page.params.lang + '/signup'}>{m._signUp()}</a>
 </div>
 {#key lang}
