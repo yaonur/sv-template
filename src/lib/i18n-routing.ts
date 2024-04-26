@@ -9,7 +9,7 @@ import {
  * Returns the path in the given language, regardless of which language the path is in.
  */
 export function route(path: string, lang: AvailableLanguageTag) {
-	console.log("<<<<<<<<route function>>>>>")
+	// console.log("<<<<<<<<route function>>>>>")
 	const pathProcessed = withoutLanguageTag(path,lang)
 	// if(lang === "en") {
 	// 	console.log("path before withoutLanguageTag:", path)
@@ -27,8 +27,8 @@ export function route(path: string, lang: AvailableLanguageTag) {
 	// }
 
 	// Prefix all other languages
-	if(lang === "en") console.log("!!!!----------returning concotaneted pathProcessed:", `/${lang}${pathProcessed}`)
-	console.log(("<<<<<<route function"))
+	// if(lang === "en") console.log("!!!!----------returning concotaneted pathProcessed:", `/${lang}${pathProcessed}`)
+	// console.log(("<<<<<<route function"))
 	return `/${lang}/${pathProcessed}`
 }
 

@@ -11,7 +11,6 @@
 	$: lang = ($page.params.lang as AvailableLanguageTag) ?? sourceLanguageTag;
 
 	$: setLanguageTag(lang);
-	$: pathName = $page.url.pathname;
 	console.log('pathName layout', $page.url.pathname);
 	if (browser && ($page.url.pathname == '/' || !availableLanguageTags.includes(lang))) {
 		// console.log("path name wrong");
