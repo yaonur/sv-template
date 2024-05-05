@@ -25,13 +25,8 @@
     
     let intent: $$Props["intent"] = props.intent as  $$Props["intent"] || "primary" ;
     let size: $$Props["size"]=props.size as $$Props["size"] || "medium";
-    
-    console.log("$$props", props);
 </script>
 
-<!-- <button {...$$props} class={cn(button({ intent, size, class: $$props.class }))} on:click={handleClick}>
-    <slot />
-</button> -->
 <button {...props} class={cn(button({ intent, size, class: props.class as string}))}>
     {@render children()}
 </button>
