@@ -14,5 +14,6 @@
 
 <h1 class="text-red-400">{m._lang_test()}</h1>
 
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-<Button onclick={handleClick} class="text-white" intent="secondary" size="small">Hello</Button>
+<Button onclick={handleClick} class="px-4 py-2 text-white" intent="secondary" size="small"
+	>Hello</Button
+>
