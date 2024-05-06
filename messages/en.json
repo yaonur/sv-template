@@ -1,4 +1,7 @@
 {
     "$schema": "https://inlang.com/schema/inlang-message-format",
-    "_lang_test": "Language Test"
+    "_lang_test": "Language Test",
+    "_about": "About",
+    "_home": "Home",
+    "_hello_user":"Hello <strong>{user}</strong>, Welcome to inlang! with your brand: <strong>{brand}</strong>"
 }

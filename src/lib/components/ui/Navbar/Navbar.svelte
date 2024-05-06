@@ -1,27 +1,20 @@
 <script>
-    import { page } from '$app/stores';
-    import { goto } from '$app/navigation';
+	import { availableLanguageTags, languageTag } from '$lib/paraglide/runtime.js';
+	import { page } from '$app/stores';
+    import * as m from '$lib/paraglide/messages';
 
-    let availableLanguages = ['en','tr', 'es', 'fr'];
-    let selectedLanguage = $page.params.lang || 'en';
-    console.log($page.route.id)
-
-    // function changeLanguage() {
-    //     const pathSegments = $page.route.id?.split('/') ;
-    //     const newPath = `/${selectedLanguage}/${pathSegments?.slice(2).join('/')}`;
-    //     goto(newPath);
-    // }
+	import { i18n } from '$lib/i18n.js';
 </script>
 
 <div class="flex justify-between {$$props.class}">
     <nav>
         <ul class="flex gap-2 bg-gray-300">
-            <li><a href="/en">Home</a></li>
+            <li><a
+                href="/"
+                class=""
+            >{m._home()}</li>
             <li>
-                <a href="/en/uploadvideo">Upload</a>
-            </li>
-            <li>
-                <a href="/en/login">Login</a>
+                <a href="/about">{m._about()}</a>
             </li>
         </ul>
     </nav>

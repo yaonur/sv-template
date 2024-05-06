@@ -1,4 +1,7 @@
 {
     "$schema": "https://inlang.com/schema/inlang-message-format",
-    "_lang_test":"Dil Testi"
+    "_lang_test":"Dil Testi",
+    "_about": "Hakkında",
+    "_home": "Ana Ekran",
+    "_hello_user": "Merhaba <strong style='color:red'>{user}</strong>, inlang'e  <strong>{brand}</strong> markanız ile hoşgeldiniz!."
 }

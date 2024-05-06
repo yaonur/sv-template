@@ -5,6 +5,7 @@
 	import { availableLanguageTags, languageTag } from "$lib/paraglide/runtime.js"
 	import { page } from '$app/stores'
 	import LangSwitcher from "$ui/LangSwitcher/LangSwitcher.svelte";
+	import Navbar from "$ui/Navbar/Navbar.svelte";
 
 
 	const { children } = $props()
@@ -12,6 +13,7 @@
 
 <ParaglideJS {i18n}>
 	<LangSwitcher/>
+	<Navbar/>
 	{@render children()}
 </ParaglideJS>
 
