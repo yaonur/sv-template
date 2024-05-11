@@ -1,4 +1,4 @@
-<script lang="ts">
+<script >
 	import * as m from '$lib/paraglide/messages';
 	import Button from '$elements/Button';
 	import { availableLanguageTags, languageTag } from '$lib/paraglide/runtime.js';

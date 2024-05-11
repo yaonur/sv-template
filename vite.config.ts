@@ -1,14 +1,16 @@
 import { sveltekit } from '@sveltejs/kit/vite';
-import {paraglide} from "@inlang/paraglide-sveltekit/vite"
+import { paraglide } from '@inlang/paraglide-sveltekit/vite';
 import { defineConfig } from 'vite';
 // import path from 'path'
 
 export default defineConfig({
-	plugins: [paraglide({
-		project:"./project.inlang",
-		outdir:"./src/lib/paraglide"
-	}),
-		sveltekit()]
+	plugins: [
+		paraglide({
+			project: './project.inlang',
+			outdir: './src/lib/paraglide'
+		}),
+		sveltekit()
+	]
 	//    resolve: {
 	// 	alias: {
 	// 		$ui: path.resolve(__dirname, 'src/lib/components/ui'),
