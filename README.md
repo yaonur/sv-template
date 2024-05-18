@@ -1,6 +1,11 @@
+# Template project for tailwind setup on sveltekit
+```bash
+npx degit https://github.com/yaonur/sveltekit-tailwind
+```
+
 # create-svelte
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
 ## Creating a project
 
