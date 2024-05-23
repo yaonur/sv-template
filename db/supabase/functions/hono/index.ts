@@ -1,14 +1,14 @@
 import { corsHeaders } from '../_shared/cors.ts'
 
-import { Hono } from 'Hono'
+import { Hono } from 'https://deno.land/x/hono/mod.ts'
 import { cors } from 'https://deno.land/x/hono/middleware.ts'
 import type { Context } from 'https://deno.land/x/hono/mod.ts'
 import { jwt } from 'https://deno.land/x/hono/middleware.ts'
 const secret = Deno.env.get('PUBLIC_JWT_SECRET');
 const anon_key = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
 
-console.log("secret:",secret)
-console.log("anon_key:",anon_key)
+// console.log("secret:",secret)
+// console.log("anon_key:",anon_key)
 const app = new Hono()
 app.use(`*`,cors())
 app.use(`*`,jwt({
@@ -16,7 +16,7 @@ app.use(`*`,jwt({
 }))
 
 app.post('/hono', async (c: Context) =>{
-  // console.log(c)
+  console.log("context",c)
   const payload = c.get('jwtPayload')
   console.log("payload:",payload)
   let resp = {

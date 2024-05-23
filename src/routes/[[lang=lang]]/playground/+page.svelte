@@ -75,6 +75,14 @@
 		console.log("data:",data)
 		honoResp = data
 	}
+	async function handleUserId() {
+		const { data, error } = await supabase.rpc("vote",{vote_value:8})
+			if (error) {
+			console.log('error:', error);
+			message = `Error ${error.message}`;
+		}
+		console.log('data:', data);
+	}
 </script>
 
 <div class="grid grid-cols-12 gap-4 mx-auto">
@@ -105,6 +113,11 @@
 				<p>userMail: {honoResp?.userMail}</p>
 			{/if}
 			<Button class="w-full" on:click={handleHono}>Call Hono</Button>
+		</div>
+	</div>
+	<div class="border-2 w-full border-black p-4 col-span-3 flex flex-col gap-1">
+		<div class="">
+			<Button class="w-full" on:click={handleUserId}>Call user_id function</Button>
 		</div>
 	</div>
 
