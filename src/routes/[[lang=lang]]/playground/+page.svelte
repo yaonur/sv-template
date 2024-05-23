@@ -75,8 +75,9 @@
 		console.log("data:",data)
 		honoResp = data
 	}
+	let vote_value:number = 5
 	async function handleUserId() {
-		const { data, error } = await supabase.rpc("vote",{vote_value:8})
+		const { data, error } = await supabase.rpc("vote",{vote_value})
 			if (error) {
 			console.log('error:', error);
 			message = `Error ${error.message}`;
@@ -117,6 +118,7 @@
 	</div>
 	<div class="border-2 w-full border-black p-4 col-span-3 flex flex-col gap-1">
 		<div class="">
+			<input type="number" bind:value={vote_value}>
 			<Button class="w-full" on:click={handleUserId}>Call user_id function</Button>
 		</div>
 	</div>
