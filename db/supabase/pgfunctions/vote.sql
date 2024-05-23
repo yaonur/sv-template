@@ -21,6 +21,5 @@ BEGIN
 
     RETURN QUERY SELECT user_uuid, current_total_voted_times, new_value;
 END;
-$$
- SECURITY DEFINER
+$$ SECURITY DEFINER
     SET search_path = service_role;
