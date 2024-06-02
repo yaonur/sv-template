@@ -50,6 +50,6 @@
 	</div>
 {/key}
 {#key lang}
-<p>user in layout: {data.session?.user.email}</p>
+	<p>user in layout: {data.session?.user.email}</p>
 	<slot />
 {/key}
