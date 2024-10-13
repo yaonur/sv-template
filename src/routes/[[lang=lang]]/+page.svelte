@@ -19,12 +19,13 @@
 		}
 	];
 </script>
-<p class="text-red-400 my-4">Context api example with stores for comp lib </p>
-<Accordion >
+
+<p class=" my-4 text-red-400">Context api example with stores for comp lib</p>
+<Accordion>
 	{#each items as item, i}
 		<AccordionItem>
-			<svelte:fragment slot="title"> {item.title}</svelte:fragment>
-			<svelte:fragment slot="content"> {item.content}</svelte:fragment>
+			<svelte:fragment slot="title">{item.title}</svelte:fragment>
+			<svelte:fragment slot="content">{item.content}</svelte:fragment>
 		</AccordionItem>
 	{/each}
 </Accordion>
