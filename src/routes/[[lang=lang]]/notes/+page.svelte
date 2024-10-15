@@ -15,6 +15,7 @@
 
     let selectedNote = null;
     let intervalId = null;
+    let qNum = 0;
 
     // Timer variables in BPM
     let firstNoteBPM = 120; // BPM for the first note played
@@ -26,51 +27,56 @@
         return (60 / bpm) * 1000;
     }
 
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
     onMount(async () => {
         await initializeMIDI();
     });
-	var qNum =0 
-    function start() {
+
+    async function start() {
         if (intervalId) return; // Prevent multiple intervals
-        intervalId = setInterval(() => {
-			debugger
-			qNum++
+        intervalId = true; // Use a boolean flag to indicate the process is running
+
+        while (intervalId) {
+            qNum++;
             const filteredNotes = notes.filter(note => !(note.note === 'A' && note.octave === 3));
             const randomIndex = Math.floor(Math.random() * filteredNotes.length);
             selectedNote = filteredNotes[randomIndex];
             const noteNumber = getMIDINoteNumber(selectedNote.note, selectedNote.octave);
             playMIDINote(noteNumber, bpmToMs(firstNoteBPM)); // Play the first note
-            setTimeout(() => {
-                const noteIndex = notes.indexOf(selectedNote);
-                ladderDown(noteIndex, selectedNote.octave);
-            }, bpmToMs(waitTimeBPM)); // Wait before starting the ladder
-        }, bpmToMs(firstNoteBPM) + bpmToMs(waitTimeBPM) + bpmToMs(ladderSpeedBPM) * notes.length); // Randomize a new note after the entire sequence
+            await sleep(bpmToMs(waitTimeBPM)); // Wait before starting the ladder
+
+            const noteIndex = notes.indexOf(selectedNote);
+            await ladderDown(noteIndex, selectedNote.octave);
+
+            await sleep(bpmToMs(firstNoteBPM) + bpmToMs(waitTimeBPM) + bpmToMs(ladderSpeedBPM) * notes.length); // Wait before randomizing a new note
+        }
     }
 
     function stop() {
-        if (intervalId) {
-            clearInterval(intervalId);
-            intervalId = null;
-        }
+        intervalId = false; // Stop the process
     }
 
-    function ladderDown(noteIndex: number, octave: number) {
-		debugger
-        if (noteIndex < 0 || (noteIndex === 0 && octave === 3)) {
-            return;
-        }
-        selectedNote = notes[noteIndex];
-        const noteNumber = getMIDINoteNumber(selectedNote.note, selectedNote.octave);
-        playMIDINote(noteNumber, bpmToMs(ladderSpeedBPM)); // Play the note in the ladder
-        setTimeout(() => {
+    async function ladderDown(noteIndex: number, octave: number) {
+        while (noteIndex >= 0 && !(noteIndex === 0 && octave === 3)) {
+            selectedNote = notes[noteIndex];
+            const noteNumber = getMIDINoteNumber(selectedNote.note, selectedNote.octave);
+            playMIDINote(noteNumber, bpmToMs(ladderSpeedBPM)); // Play the note in the ladder
+            await sleep(bpmToMs(ladderSpeedBPM)); // Speed of the ladder movement
+
             const nextNoteIndex = noteIndex === 0 ? notes.length - 1 : noteIndex - 1;
             const nextOctave = noteIndex === 0 ? octave - 1 : octave;
             if (nextNoteIndex === 7 && nextOctave === 3) {
                 selectedNote = notes[0]; // Ensure it stops at A3
+                const finalNoteNumber = getMIDINoteNumber('A', 3);
+                playMIDINote(finalNoteNumber, bpmToMs(ladderSpeedBPM)); // Play the final A3 note
                 return;
             }
-            ladderDown(nextNoteIndex, nextOctave);
-        }, bpmToMs(ladderSpeedBPM)); // Speed of the ladder movement
+            noteIndex = nextNoteIndex;
+            octave = nextOctave;
+        }
     }
 
     function playA3() {
@@ -88,7 +94,7 @@
 </div>
 
 <div class="mt-4">
-	<p>Num:{qNum}</p>
+    <p>Num: {qNum}</p>
     <button class="p-2 bg-blue-500 text-white rounded hover:bg-blue-700 transition-colors duration-300 mr-2" on:click={start}>Start</button>
     <button class="p-2 bg-red-500 text-white rounded hover:bg-red-700 transition-colors duration-300" on:click={stop}>Stop</button>
     <button class="p-2 bg-green-500 text-white rounded hover:bg-green-700 transition-colors duration-300 ml-2" on:click={playA3}>Play A3</button>
