@@ -3,8 +3,8 @@
 	let {song} : {song:Song} = $props() 
 </script>
 
-<div class="flex gap-4">
-	<p>{song.title.toLowerCase()}</p>
-	<p>{song.tone}</p>
-	<p>{song.modality}</p>
+<div class="flex border border-gray-300 p-1 my-1 mx-4">
+	<p class="px-1">{song.title.toLowerCase()}</p>
+	<p class="pl-2 ">{song.tone}</p>
+	<p class="pl-1">{song.modality}</p>
 </div>
