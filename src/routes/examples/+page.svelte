@@ -17,6 +17,7 @@
 </script>
 
 <div>
+	<p>----------------------- Page ----------------------------</p>
 	<div class="border py-2">
 		<p class="">Count: {count.value}</p>
 		<button class="border bg-green-400 px-2" onclick={() => (count.value += 1)}>Increment</button>

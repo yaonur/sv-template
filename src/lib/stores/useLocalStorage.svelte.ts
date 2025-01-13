@@ -31,12 +31,12 @@ export class LocalStorageClass<T>{
 			}
 		}
 		// using getters and setter so we dont have to use effect
-
 		$effect (()=>{
 			localStorage.setItem(this.key, this.serialize(this.value))
 		})
+		
 	}
-
+	
 	// problem on using getter and setter on nested object
 	// get value() {
 	// 	return this.#value
@@ -57,9 +57,12 @@ export class LocalStorageClass<T>{
 	deserialize(value: string) {
 		return JSON.parse(value)
 	}
+	
 }
 
 // shadowing class from caller
 export function useLocalStorage<T>(key: string, value: T) {
 	return new LocalStorageClass(key, value)
 }
+
+// let preInitStorage = new LocalStorageClass('preInitStorage', { value: 'preInitStorage' })

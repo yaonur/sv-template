@@ -6,7 +6,7 @@
 	let { children } = $props();
 </script>
 
-<Navbar/>
 <ParaglideJS {i18n}>
+	<Navbar/>
 	{@render children()}
 </ParaglideJS>
