@@ -20,17 +20,35 @@ export class LocalStorageClass<T>{
 	key = ''
 	constructor(key: string , value: T) {
 		this.key = key
-		this.value = value
+		this.value = value;
 
 		if (browser) {
 			const item = localStorage.getItem(key)
-			if (item) this.value = this.deserialize(item)
+			if (item){
+				this.value = this.deserialize(item)
+			} else {
+				localStorage.setItem(key, this.serialize(this.value))
+			}
 		}
+		// using getters and setter so we dont have to use effect
 
 		$effect (()=>{
 			localStorage.setItem(this.key, this.serialize(this.value))
 		})
 	}
+
+	// problem on using getter and setter on nested object
+	// get value() {
+	// 	return this.#value
+	// }
+	// set value(newValue: T) {
+	// 	console.log('setting value', newValue)
+	// 	this.#value = newValue
+	// 	// this.#value = this.createProxy(newValue);
+	// 	if (browser) {
+	// 		localStorage.setItem(this.key, this.serialize(this.#value))
+	// 	}
+	// }
 
 	serialize(value: T): string {
 		return JSON.stringify(value)
@@ -39,4 +57,9 @@ export class LocalStorageClass<T>{
 	deserialize(value: string) {
 		return JSON.parse(value)
 	}
+}
+
+// shadowing class from caller
+export function useLocalStorage<T>(key: string, value: T) {
+	return new LocalStorageClass(key, value)
 }
