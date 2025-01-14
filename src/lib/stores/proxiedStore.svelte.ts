@@ -19,7 +19,6 @@ let proxyTest = (options:Options) => {
 	return  obj;
 };
 function reset() {
-	console.log("reset triggered",initProxy )
 	localStorage.setItem('proxyTest', JSON.stringify(defaultOptions));
 	for (const key in defaultOptions) {
         if (defaultOptions.hasOwnProperty(key)) {
@@ -32,14 +31,12 @@ let initProxy = proxyTest(defaultOptions);
 
 export const proxiedState = new Proxy(initProxy, {
 	get(target, prop, receiver) {
-		console.log("get")
 		if (prop === 'reset') {
             return reset;
         }
 		return Reflect.get(target, prop, receiver);
 	},
 	set(target, prop, value, receiver) {
-		console.log("set")
 		// do effect here update the localstorage maybe
 		localStorage.setItem('proxyTest', JSON.stringify({ ...target, [prop]: value }));
 		return Reflect.set(target, prop, value, receiver);
