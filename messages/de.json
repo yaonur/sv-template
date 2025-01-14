@@ -1,8 +1,8 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"hello_world": "Selam, {name}!",
-	"home": "Anasayfa",
+	"hello_world": "Hallo, {name} aus en!",
+	"home": "Heim",
 	"_start": "Başla",
 	"_stop": "Durdur",
-	"_volume": "Ses"
+	"_volume": "Volumen"
 }

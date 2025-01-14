@@ -14,4 +14,5 @@
 <CompA/>
 <CompB/>
 <button class="px-2 bg-gray-200" onclick={changeGlobalStore}>Reset globalStore</button>
+<p>---------------------- page -----------------------</p>
 {@render children()}
