@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { proxiedState } from "$lib/stores/proxiedStore.svelte";
 	const updateProxiedState = () => {
-		proxiedState.key1 = "key1 changed"
+		proxiedState.key2= "key2 changed"
 	}
 	
 </script>
