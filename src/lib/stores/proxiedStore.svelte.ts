@@ -19,15 +19,14 @@ let proxyTest = (options:Options) => {
 	return  obj;
 };
 function reset() {
+	console.log("reset")
 	localStorage.setItem('proxyTest', JSON.stringify(defaultOptions));
-	for (const key in defaultOptions) {
-        if (defaultOptions.hasOwnProperty(key)) {
-            proxiedState[key as keyof Options] = defaultOptions[key as keyof Options];
-        }
-    }
+	// for (const key in defaultOptions) {
+	// 	proxiedState[key as keyof Options] = defaultOptions[key as keyof Options];
+    // }
+	Object.assign(proxiedState,defaultOptions)
 }
 let initProxy = proxyTest(defaultOptions);
-// initProxy.key1 = 'new value for key1';
 
 export const proxiedState = new Proxy(initProxy, {
 	get(target, prop, receiver) {
