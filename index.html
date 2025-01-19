@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Wasm Math Example</title>
+</head>
+<body>
+    <script type="module">
+        import init, { add } from './pkg/wasm_math.js';
+
+        async function run() {
+            await init();
+            
+            const result = add(5, 3);
+            console.log('5 + 3 =', result);
+        }
+
+        run();
+    </script>
+</body>
+</html> 

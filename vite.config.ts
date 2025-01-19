@@ -9,5 +9,11 @@ export default defineConfig({
 			project: './project.inlang',
 			outdir: './src/lib/paraglide'
 		})
-	]
+	],
+	build: {
+		target: 'esnext'
+	},
+	optimizeDeps: {
+		exclude: ['./src/lib/wasm/wasm-math/pkg']
+	}
 });
