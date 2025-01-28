@@ -1,4 +1,5 @@
-import init, { add } from '../wasmlib/wasm-math/pkg/wasm_math';
+import init, { greet } from './test/pkg/test';
+import wasmUrl from './test/pkg/test_bg.wasm?url';
 
 let initialized = false;
 
@@ -9,7 +10,7 @@ async function ensureInitialized() {
     }
 }
 
-export async function wasmAdd(a: number, b: number): Promise<number> {
+export async function greetWasm() {
     await ensureInitialized();
-    return add(a, b);
+    return greet();
 } 
