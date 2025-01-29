@@ -25,6 +25,12 @@ npm run dev
 npm run dev -- --open
 ```
 
+# for wasm build
+
+```bash
+	watchexec -w src -w Cargo.toml -- wasm-pack build --target web
+```
+
 ## Building
 
 To create a production version of your app:
